@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Characters Search</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>Anytime is Train Time</h1>
+        <h3>choo choo . Chee Chee</h3>
+    </div>
+    <div class="row">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <!-- Current Employees-->
+                <div class="card mb-4">
+                    <div class="card-header">Current Train Schedule</div>
+                    <div class="card-body">
+                        <table class="table table-sm table-hover" id='employee-table'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td>Trenton Express</td>
+                                <td>Trenton</td>
+                                <td>25</td>
+                                <td>05:35 PM</td>
+                                <td>10</td>
+                            </tbody>
+
+                            <tbody>
+                                <td>Trenton Express</td>
+                                <td>Trenton</td>
+                                <td>25</td>
+                                <td>05:35 PM</td>
+                                <td>10</td>
+                            </tbody>
+                            <tbody>
+                                    <td>Trenton Express</td>
+                                    <td>Trenton</td>
+                                    <td>25</td>
+                                    <td>05:35 PM</td>
+                                    <td>10</td>
+                            </tbody>
+    
+    
+                                   
+                             </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Add Employee  -->
+                <div class="card mb-4">
+                    <div class="card-header">Add Train</div>
+                    <div class="card-body">
+
+                        <!-- Entry Form -->
+                        <form>
+                            <div class="form-group">
+                                <label for="employee-name-input">Train Name</label>
+                                <input class="form-control" id="employee-name-input" placeholder="Jane Doe" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="role-input">Role</label>
+                                <input class="form-control" id="role-input" placeholder="CEO" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="start-input">Start Date (MM/DD/YYYY)</label>
+                                <input class="form-control" id="start-input" placeholder="01/08/1989" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="rate-input">Monthly Rate</label>
+                                <input class="form-control" id="rate-input" placeholder="200000" type="text">
+                            </div>
+                            <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
