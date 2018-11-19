@@ -8,6 +8,7 @@ body {
     text-align: left;
     background-color: #fff;
     padding: 1.25rem;
+    position:center;
 }
 .jumbotron{
 color:white;
@@ -31,6 +32,7 @@ element.style {
     background-color:#337AB7;
     border-bottom: 1px solid rgba(0,0,0,.125);
     color:white;
+    
 }
 .card {
     position: relative;
@@ -43,9 +45,14 @@ element.style {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color:lightcyan;
     background-clip: border-box;
-    border: 2px solid rgba(0,0,0,.125);
+    border: 2px solid#337AB7;
     border-radius: 1.25rem;
 
+}
+#train-table th ,
+td {
+    display :inline-block;
+    width : 16.575%;
 }
