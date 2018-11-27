@@ -51,8 +51,22 @@ element.style {
     border-radius: 1.25rem;
 
 }
-#train-table th ,
-td {
-    display :inline-block;
-    width : 16.575%;
+.btn {
+    float :right;
+    background-color: green;
 }
+@media only screen and (max-width: 768px){
+    .jumbotron ,
+    .card ,
+    .btn ,
+    .card-header,
+    .card
+    
+        margin-left: auto;
+        margin-right:auto;
+        position: absolute;
+        left: 80px;
+        top: 400px;
+        width: 500px;
+        height: auto;
+    }

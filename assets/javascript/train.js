@@ -1,15 +1,15 @@
 
 
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAN0QViyG7gOX_LGiztAw5k8UQd_z7p-YY",
-    authDomain: "train-schedule-hw-7.firebaseapp.com",
-    databaseURL: "https://train-schedule-hw-7.firebaseio.com",
-    projectId: "train-schedule-hw-7",
-    storageBucket: "train-schedule-hw-7.appspot.com",
-    messagingSenderId: "295330514687"
-  };
-  firebase.initializeApp(config);
+var config = {
+  apiKey: "AIzaSyAN0QViyG7gOX_LGiztAw5k8UQd_z7p-YY",
+  authDomain: "train-schedule-hw-7.firebaseapp.com",
+  databaseURL: "https://train-schedule-hw-7.firebaseio.com",
+  projectId: "train-schedule-hw-7",
+  storageBucket: "train-schedule-hw-7.appspot.com",
+  messagingSenderId: "295330514687"
+};
+firebase.initializeApp(config);
 
 //variables for database
   var database = firebase.database();
@@ -17,11 +17,11 @@
   // 2. Button for adding Employees
 $("#add-train-btn").on("click", function(event) {
     event.preventDefault();
-  
+
     // Grabs user input
-    var trainName = $("#train-name-input").val().trim();
+    var trainName = $("#t-name-input").val().trim();
     var trainDestination = $("#destination-input").val().trim();
-    var FirstTrain = moment($("#first-train-input").val().trim(), "HHmm-military").format("X");
+    var firstTrain = moment($("#first-train-input").val().trim(), "HHmm-military").format("X");
     var trainFrequency = $("#frequency-input").val().trim();
   
     // Creates local "temporary" object for holding train data
@@ -36,10 +36,10 @@ $("#add-train-btn").on("click", function(event) {
     database.ref().push(newTrain);
   
     // Logs everything to console
-    console.log(newTrain.name);
-    console.log(newTrain.destination);
-    console.log(newTrain.firstTrain);
-    console.log(newTrain.frequency);
+    // console.log(newTrain.name);
+    // console.log(newTrain.destination);
+    // console.log(newTrain.firstTrain);
+    // console.log(newTrain.frequency);
   
     alert("Train successfully added");
   
@@ -53,15 +53,15 @@ $("#add-train-btn").on("click", function(event) {
   // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
   database.ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val());
-  
+    var csp =childSnapshot.val();
     // Store everything into a variable.
-    var trainName = childSnapshot.val().trainname;
-    var trainDestination = childSnapshot.val().destination;
-    var firstTrain = childSnapshot.val().firstTrain;
-    var trainFrequency = childSnapshot.val().frequency;
+    var trainname = csp.name;
+    var trainDestination = csp.destination;
+    var firstTrain = csp.firstTrain;
+    var trainFrequency = csp.frequency;
   
     // train info
-    console.log(trainName);
+    console.log(trainname);
     console.log(trainDestination);
     console.log(firstTrain);
     console.log(trainFrequency);
@@ -72,25 +72,25 @@ $("#add-train-btn").on("click", function(event) {
     // Calculate the next arrival train 
     // To calculate the arrival train
     
-    var empMonths = moment().diff(moment(firstTrain, "X"), "months");
-    console.log(empMonths);
+    // var empMonths = moment().diff(moment(firstTrain, "X"), "months");
+    // console.log(empMonths);
   
     // Calculate the total minutes away
-    var trainMinutesAway = trainMinutes * trainFrequency;
-    console.log(MinutesAway);
+    // var trainMinutesAway = trainMinutes * trainFrequency;
+    // console.log(MinutesAway);
   
     // Create the new row
     var newRow = $("<tr>").append(
-      $("<td>").text(trainName),
+      $("<td>").text(trainname),
       $("<td>").text(trainDestination),
       $("<td>").text(trainFrequency),
-      $("<td>").text(firstTrain),
-      $("<td>").text(trainArrival),
-      $("<td>").text(minutesAway)
+      $("<td>").text(empStartPretty),
+      // $("<td>").text(trainNextArrival),
+      // $("<td>").text(minutesAway)
     );
   
     // Append the new row to the table
-    $("#train-table > tbody").append(newRow);
+    $("tbody").append(newRow);
   });
 
 
